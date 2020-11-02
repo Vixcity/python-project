@@ -1,14 +1,18 @@
-from flask import Flask, request, jsonify,render_template,redirect
+from flask import Flask, request, jsonify, render_template, redirect
+import os
 
 app = Flask(__name__)
 
+
 @app.route('/')
-def Toinedx():
+def toinedx():
     return redirect('/index.html')
+
 
 @app.route('/index.html')
 def index():
     return render_template('/index.html')
+
 
 @app.route('/test', methods=["POST"])
 def calculate():
