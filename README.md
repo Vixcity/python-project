@@ -1,7 +1,7 @@
 # Python项目
 
 #### 介绍
-温鑫的python项目
+Vixcity的python项目
 
 #### 软件架构
 软件架构说明
@@ -10,28 +10,22 @@
 #### 安装教程
 
 1.  首先安装pycharm
-2.  xxxx
-3.  xxxx
+2.  代理我用的是[快代理](https://www.kuaidaili.com/)
+3.  验证码平台我用的是[图鉴](http://www.ttshitu.com/)
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  服务器
+	1.  安装flask库 ---------- pip install flask
+	2.  安装django库 --------- pip install django
+2.  爬虫
+	1.  安装requests库 ------- pip install requests
+	2.  安装pyquery库 -------- pip install pyquery
+	3.  安装fake_useragent库 - pip install fake_useragent
+	4.  安装bs4库 ------------ pip install bs4
+	5.  安装lxml库 ----------- pip install lxml
+	6.  安装pandas库 --------- pip install pandas
+	7.  安装webbrowser库 ----- pip install webbrowser
+3.  数据分析
+	1.  安装numpy库 ---------- pip install numpy
+	2.  安装pandas库 --------- pip install pandas
