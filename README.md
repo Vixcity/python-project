@@ -29,3 +29,8 @@ Vixcity的python项目
 3.  数据分析
 	1.  安装numpy库 ---------- pip install numpy
 	2.  安装pandas库 --------- pip install pandas
+4.  x
+5.  x
+6.  x
+7.  x
+8.  x
