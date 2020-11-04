@@ -26,6 +26,12 @@ Vixcity的python项目
 	5.  安装lxml库 ----------- pip install lxml
 	6.  安装pandas库 --------- pip install pandas
 	7.  安装webbrowser库 ----- pip install webbrowser
+	8.  安装selenium库 ---------- pip install selenium
 3.  数据分析
 	1.  安装numpy库 ---------- pip install numpy
 	2.  安装pandas库 --------- pip install pandas
+4.  x
+5.  x
+6.  x
+7.  x
+8.  x

@@ -4,6 +4,7 @@
 # @开发工具 : PyCharm
 
 import requests
+# from multiprocessing.dummy import Pool 线程池
 if __name__ == "__main__":
     url='https://www.sogou.com/'
     respon = requests.get(url=url)
