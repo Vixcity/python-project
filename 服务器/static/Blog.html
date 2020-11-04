@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width" />
-    <meta name="author" content="www.lzqcode.com" />
     <meta name="robots" content="all" />
     <title>我的博客</title>
+	<link rel="shortcut icon" href="image/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+	<link href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.1/theme-chalk/index.css" rel="stylesheet">
     <link rel="stylesheet" href="layui/css/layui.css" />
     <link rel="stylesheet" href="css/master.css" />
     <link rel="stylesheet" href="css/gloable.css" />
     <link rel="stylesheet" href="css/nprogress.css" />
     <link rel="stylesheet" href="css/blog.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<style>
 		#github svg {
 			transition: all 1s;
@@ -39,12 +39,12 @@
     <header class="gird-header">
         <div class="header-fixed">
             <div class="header-inner">
-                <a href="javascript:void(0)" class="header-logo" id="logo">Mr.wen</a>
+                <a href="/index.html" class="header-logo" id="logo">Mr.wen</a>
                 <nav class="nav" id="nav">
                     <ul>
                         <li><a href="/index.html">首页</a></li>
-                        <li><a href="article.html">博客</a></li>
-                        <li><a href="message.html">留言</a></li>
+                        <li><a href="Blog.html">博客</a></li>
+                        <li><a href="Message.html">留言</a></li>
 						<li><a href="diary.html">日记</a></li>
                         <li><a href="link.html">友链</a></li>
                     </ul>
@@ -64,7 +64,7 @@
         <div class="container-fixed">
 		    <div class="col-content">
 		        <div class="inner">
-		            <article class="article-list bloglist" id="LAY_bloglist" >
+		            <article class="article-list bloglist" id="LAY_bloglist">
 						<section class="article-item zoomIn article">       
 							<div class="fc-flag">置顶</div>   
 							<h5 class="title">       
@@ -361,6 +361,18 @@
 								</div>   
 							</aside>
 						</section>
+						<div id="app" style="text-align: center;background: white;padding: 10px 0;margin-top: 20px">
+							<el-pagination @size-change="handleSizeChange"
+										   @current-change="handleCurrentChange"
+										   :current-page="currentPage"
+										   :page-sizes="pageSizes"
+										   :page-size="pageSize"
+										   background
+										   :pager-count="pageCount"
+										   layout="total, sizes, prev, pager, next, jumper"
+										   :total="total">
+							</el-pagination>
+						</div>
 		            </article>
 		        </div>
 		    </div>
@@ -379,11 +391,12 @@
 			    		<ul class="category mt20" id="category">
 				        	<li data-index="0" class="slider"></li>
 				        	<li data-index="1"><a href="/Blog/Article">全部文章</a></li>
-				            <li data-index="2"><a href="/Blog/Article/1/">Java</a></li>
-				            <li data-index="3"><a href="/Blog/Article/2/">前端</a></li>
-				            <li data-index="4"><a href="/Blog/Article/3/">Python</a></li>
-				            <li data-index="5"><a href="/Blog/Article/4/">PHP</a></li>
-				            <li data-index="6"><a href="/Blog/Article/5/">其它</a></li>
+				            <li data-index="2"><a href="/Blog/Article/1/">CSS</a></li>
+				            <li data-index="3"><a href="/Blog/Article/2/">H5</a></li>
+							<li data-index="6"><a href="/Blog/Article/3/">JavaScript</a></li>
+							<li data-index="4"><a href="/Blog/Article/4/">Python</a></li>
+<!--							<li data-index="5"><a href="/Blog/Article/5/">PHP</a></li>-->
+				            <li data-index="6"><a href="/Blog/Article/6/">其它</a></li>
 			    		</ul>
 					</div>
 					<!--右边悬浮 平板或手机设备显示-->
@@ -458,16 +471,79 @@
                         <a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
                     </div>
                     <p class="mt05">
-                         Copyright &copy; 2019-2020 ZQ博客 All Rights Reserved V.3.1.3 Power by ZQ博客
+                         Copyright &copy; 2019-2020 Vixcity博客 All Rights Reserved V.3.1.3 Power by Vixcity博客
                     </p>
                 </div>
             </div>
         </div>
     </footer>
+
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.6/vue.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.1/index.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
     <script src="layui/layui.js"></script>
     <script src="js/yss/gloable.js"></script>
     <script src="js/plugins/nprogress.js"></script>
+	<!--看板娘-->
 	<script src="js/kanbanniang/autoload.js"></script>
+	<!--滚动条-->
+	<script src="../static/js/plugins/MyScroll.min.js"></script>
+	<script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+            	pageSize: 10,
+				pageSizes: [5, 10, 15, 20, 30, 40, 50], // select选项设置：条/页
+				currentPage: 1,
+				total: 400,
+				pageCount:6
+			},
+            methods: {
+            	handleSizeChange(val) {
+					 this.pageSize = val;
+				},
+				handleCurrentChange(val) {
+					 this.currentPage = val;
+				},
+			}
+        })
+        const preEl = document.querySelectorAll('code')
+        preEl.forEach((el) => {
+          hljs.highlightBlock(el)
+        })
+        new MyScroll({
+            "showBar": true, //是否显示进度条
+            "color": "rgb(95,188,255)", //进度条颜色
+            "height": "64px", //进度条高度
+            "debug": false, //调试模式
+            "event": [{
+                "height": "100%",
+                "loop": true,
+                "type": "up-down",
+                "func": function () {
+                    vue.$notify({
+                        title: 'tips',
+                        message: '不要再拉我了，我到底了哦',
+                        type: 'success',
+					 	offset: 100,
+						duration:2000
+                    });
+                }
+            }]
+        })
+		$(window).resize(function(){				        //  监控窗口宽度变化
+			if ($(window).width() < 1330) {
+				vue.pageCount=4
+			}
+			else if( $(window).width() < 1024 ) {		    //  屏宽1024触发
+				$("#live2d").css('display','none'); 	 	//  隐去一部分
+			}else{
+				$("#live2d").css('display','block');		//  显示内容
+				vue.pageCount=7
+			}
+		});
+    </script>
     <script>NProgress.start();</script>
 	<script src="js/yss/article.js"></script>
 	<script>
