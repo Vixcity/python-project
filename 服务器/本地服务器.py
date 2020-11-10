@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, render_template, redirect
-
 app = Flask(__name__)
 
 

@@ -9,7 +9,7 @@
 }
 .f-oh a:hover{
     text-decoration:underline;
-    color:#6bc30d;
+    color:#1E9FFF;
 }
 
 .fs-12{
@@ -144,7 +144,7 @@
     color: #787977;
 }
 .grid-page a.p-current{
-    background-color: #6bc30d;
+    background-color: #1E9FFF;
     border-radius: 3px;
 }
 .grid-page a[href]{
@@ -185,12 +185,12 @@
     transition: all .3s ease;
 }
 .checkbox-check:checked~.checkbox-label{
-    background-color: #6bc30d;
+    background-color: #1E9FFF;
     border-color: #6bc30d;
 }
 .checkbox-check:checked~.checkbox-label:after{
     transform: translate3d(20px,0,0);
-    border-color: #6bc30d;
+    border-color: #1E9FFF;
 }
 
 .u-label {
