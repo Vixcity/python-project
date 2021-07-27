@@ -30,7 +30,10 @@ Vixcity的python项目
 3.  数据分析
 	1.  安装numpy库 ---------- pip install numpy
 	2.  安装pandas库 --------- pip install pandas
-4.  x
+	3.  安装Matplotlib库 --------- pip install Matplotlib
+4.  数据抓包
+	1.	安装dpkt库 ---------- pip install dpkt
+	2.  安装scapy库 ---------- pip install scapy
 5.  x
 6.  x
 7.  x
