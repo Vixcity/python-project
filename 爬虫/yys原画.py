@@ -28,15 +28,14 @@ for i in range(len(pc)):
         url = re.findall('href="(.*?)" target', str(a[0]))[0]
         pc_list.append(url)
 
-
 if not os.path.exists('demo/横版19201080'):
-	os.mkdir('demo/横版19201080')
+    os.makedirs('demo/横版19201080')
 os.chdir('demo/横版19201080')
 
 for i in range(len(pc_list)):
     time.sleep(0.3)  # 爬取延时，防止被察觉，远程关闭连接
     img = requests.get(pc_list[i])
-    if img.status_code ==200:
+    if img.status_code == 200:
         open(f'{i}.jpg', 'wb').write(img.content)
         print(f'{i} 下载成功')
     else:

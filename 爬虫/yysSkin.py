@@ -1,8 +1,11 @@
 import requests
+import os
 import pprint
 
 url = 'https://yys.res.netease.com/pc/zt/20161108171335/js/app/all_shishen.json'
-path = 'D:\pycharm\demo\\'
+if not os.path.exists('demo/阴阳师皮肤'):
+    os.makedirs('demo/阴阳师皮肤')
+path = 'demo/阴阳师皮肤/'
 
 headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
