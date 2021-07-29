@@ -29,13 +29,17 @@ def downloadPic():
         # 进入创建好的文件夹
         os.chdir(hero_name[i])
         skin_name = hero_skin[i].split('|')
-        for k in range(len(skin_name)+1):
+        for k in range(12):
             # 拼接url
             onehero_link = 'http://game.gtimg.cn/images/yxzj/img201606/skin/hero-info/' + str(j) + '/' + str(
                 j) + '-bigskin-' + str(k) + '.jpg'
             im = requests.get(onehero_link)  # 请求url
             if im.status_code == 200:
-                open(skin_name[k-1] + '.jpg', 'wb').write(im.content)  # 写入文件
+                try:
+                    open(skin_name[k-1] + '.jpg', 'wb').write(im.content)  # 写入文件
+                except Exception as e:
+                    open(str(k) + '.jpg', 'wb').write(im.content)
+
         os.chdir('..')
         print(hero_name[i]+'皮肤下载完成')
         i += 1
