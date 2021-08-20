@@ -12,11 +12,11 @@ kw = input('请输入您想要翻译的内容:')
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'
 }
-data={
+data = {
     'kw': kw
 }
-response = requests.post(url=post_url,data=data,headers=header)
+response = requests.post(url=post_url, data=data, headers=header)
 obj = response.json()
-fp=open('./'+kw+'.json','w',encoding='utf-8')
-json.dump(obj,fp=fp,ensure_ascii=False)
+fp = open('./' + kw + '.json', 'w', encoding='utf-8')
+json.dump(obj, fp=fp, ensure_ascii=False)
 print('over')
